@@ -738,3 +738,15 @@
 </body>
 
 </html>
+<script>
+    // Re-enable right-click
+    document.addEventListener('DOMContentLoaded', function () {
+      document.oncontextmenu = null;
+      document.body.oncontextmenu = null;
+    
+      // Also remove any event listeners on contextmenu
+      document.addEventListener('contextmenu', function (e) {
+        e.stopPropagation(); // Prevent other listeners from blocking it
+      }, true);
+    });
+    </script>
