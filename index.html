@@ -4398,7 +4398,21 @@
       </svg>
     </div>
     <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/app.min.js?v=1"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
+<script>
+  // Re-enable right-click
+  document.addEventListener('DOMContentLoaded', function () {
+    document.oncontextmenu = null;
+    document.body.oncontextmenu = null;
+  
+    // Also remove any event listeners on contextmenu
+    document.addEventListener('contextmenu', function (e) {
+      e.stopPropagation(); // Prevent other listeners from blocking it
+    }, true);
+  });
+  </script>
+  
